@@ -1,0 +1,6 @@
+.all-page-region-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vh;
+  margin-bottom: 7vh;
+}

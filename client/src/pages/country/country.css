@@ -1,0 +1,7 @@
+.country-page {
+  width: 80%;
+  margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}

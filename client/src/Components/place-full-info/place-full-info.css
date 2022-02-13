@@ -1,0 +1,30 @@
+.place-full-info {
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-full-info img {
+  width: 85%;
+}
+
+.place-full-info-text-area {
+  width: 85%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.3rem 0;
+}
+
+.place-full-info-text-area-title {
+  font-weight: 900;
+  margin: 0.5rem 0;
+}
+
+.place-full-info-locations {
+  padding-top: 0.3rem;
+}

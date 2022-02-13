@@ -1,0 +1,21 @@
+.region-page {
+  width: 80%;
+  margin: 5vh auto;
+}
+
+.region-page-countries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.region-page-country {
+  padding: 0.5rem 1rem;
+}
+
+.region-page-country:hover {
+  background-color: #99ccf3;
+}
+
+.region-page-button {
+  margin-bottom: 5vh;
+}

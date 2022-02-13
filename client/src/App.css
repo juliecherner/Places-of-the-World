@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .home-page-title {
+    text-align: center;
+  }
+  .all-page-header {
+    display: flex;
+    flex-direction: column;
+  }
+  .places-list-item {
+    width: 100%;
+  }
+  .country-page-country-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+  }
+  .place-full-info img {
+    width: 100%;
+  }
+
+  .place-full-info-text-area {
+    width: 100%;
+  }
+  .place-full-info {
+    padding: 2vh;
+  }
+  .header--mobile {
+    display: block;
+  }
+  .header-desktop {
+    display: none;
+  }
+  .all-page-region-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-page--button {
+    margin-top: 15vh;
+  }
+}

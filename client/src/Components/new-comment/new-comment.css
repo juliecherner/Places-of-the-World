@@ -1,0 +1,6 @@
+.new-comment {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
