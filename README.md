@@ -22,8 +22,11 @@ Due to such functuanality users create content one for another.
 - adding new places
   ![Adding new place](./client/src/assets/images/new-place.png)
 - searching for all places, places by region, places by country
-  ![All places](./client/src/assets/images/all-places.png)
-  ![Places by region](./client/src/assets/images/region-countries.png)
-  ![Places by country](./client/src/assets/images/bycountry.png)
+  - All places
+    ![All places](./client/src/assets/images/all-counries.png)
+  - Places by region
+    ![Places by region](./client/src/assets/images/region-countries.png)
+  - Places by country
+    ![Places by country](./client/src/assets/images/bycountry.png)
 - commenting existing places
   ![Place and comment](./client/src/assets/images/comments.jpg)
