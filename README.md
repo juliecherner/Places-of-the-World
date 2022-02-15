@@ -28,5 +28,3 @@ Due to such functuanality users create content one for another.
     ![Places by region](./client/src/assets/images/region-countries.png)
   - Places by country
     ![Places by country](./client/src/assets/images/bycountry.png)
-- commenting existing places
-  ![Place and comment](./client/src/assets/images/comments.jpg)
