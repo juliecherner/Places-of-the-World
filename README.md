@@ -23,7 +23,7 @@ Due to such functuanality users create content one for another.
   ![Adding new place](./client/src/assets/images/new-place.png)
 - searching for all places, places by region, places by country
   - All places
-    ![All places](./client/src/assets/images/all-counries.png)
+    ![All places](./client/src/assets/images/all-countries.png)
   - Places by region
     ![Places by region](./client/src/assets/images/region-countries.png)
   - Places by country
