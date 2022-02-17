@@ -10,23 +10,31 @@ Due to such functuanality users create content one for another.
 
 # Technologies
 
-- Scrapping (puppeteer)
+- Scrapping
 - CSS/HTML
 - React.js
+- Material UI
 - Node.js
 - Express.js
 - MongoDB
 
 # Functionality
 
-- adding new places
-  ![Adding new place](./client/src/assets/images/new-place.png)
-- searching for all places, places by region, places by country
-  - All places
+- **Searching for all places, places by region, places by country**
+  - **Search by regions**
     ![All places](./client/src/assets/images/all-countries.png)
-  - Places by region
-    ![Places by region](./client/src/assets/images/region-countries.png)
-  - Places by country
+  - **Places by country**
     ![Places by country](./client/src/assets/images/bycountry.png)
-- commenting existing places
+- **Commenting existing places**
   ![Place and comment](./client/src/assets/images/comments.jpg)
+- **Adding new places**
+  ![Adding new place](./client/src/assets/images/new-place.png)
+
+# Data flow
+
+![Data flow of the project](./client/src/assets/images/data-flow.drawio.png)
+
+# Acknowledgement
+
+- [Rest Countries API](https://restcountries.com/)
+- [Scrapper Puppeteer](https://github.com/puppeteer/puppeteer)

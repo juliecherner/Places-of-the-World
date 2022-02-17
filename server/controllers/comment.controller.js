@@ -2,11 +2,12 @@ const commentService = require("../services/comment.service.js");
 
 const findByPlace = async (req, res) => {
   const { placeId } = req.query;
+  //add check
   try {
     const comments = await commentService.byParameter(placeId);
     res.status(200).send(comments);
   } catch (error) {
-    res.status(400).send({ error: error.message });
+    res.status(204).send({ error: error.message });
   }
 };
 

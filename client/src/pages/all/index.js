@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RegionButtons from "../../Components/region-buttons";
 import PlacesList from "../../Components/places-list";
 
