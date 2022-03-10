@@ -1,4 +1,4 @@
-import AddForm from "../../Components/add-form";
+import AddForm from "./components/add-form";
 
 const NewPlace = () => {
   return (

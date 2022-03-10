@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import PlaceFullInfo from "../../Components/place-full-info";
-import CommentsArea from "../../Components/comments-area";
+import PlaceFullInfo from "./components/place-full-info";
+import CommentsArea from "./components/comments-area";
 import Spinner from "../../Components/spinner";
 import Api from "../../api/Api";
 import "./place.css";

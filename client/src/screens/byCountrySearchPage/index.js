@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Api from "../../api/Api";
-import CountryInput from "../../Components/country-input";
+import CountryInput from "./components/country-input";
 import PlacesList from "../../Components/places-list";
-import LocationLine from "../../Components/location-line";
+import LocationLine from "./components/location-line";
 import "./country.css";
 
 const Country = () => {

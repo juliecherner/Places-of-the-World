@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import RegionButtons from "../../Components/region-buttons";
+import RegionButtons from "../regionPage/components/region-buttons";
 import PlacesList from "../../Components/places-list";
 import Spinner from "../../Components/spinner";
 import { Button } from "@mui/material";

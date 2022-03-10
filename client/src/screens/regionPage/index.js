@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Api from "../../api/Api";
-import CountriesByRegion from "../../Components/countries-region";
+import CountriesByRegion from "./components/countries-region";
 import PlacesList from "../../Components/places-list";
 import Spinner from "../../Components/spinner";
 import { Button } from "@mui/material";

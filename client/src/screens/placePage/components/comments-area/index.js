@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CommentsList from "../comments-list";
 import NewComment from "../new-comment";
-import Api from "../../api/Api";
+import Api from "../../../../api/Api";
 import { Button } from "@mui/material";
 
 import "./comments-area.css";
