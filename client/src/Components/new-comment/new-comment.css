@@ -1,4 +1,5 @@
 .new-comment {
+  width: 70%;
   margin-top: 3vh;
   display: flex;
   flex-direction: column;

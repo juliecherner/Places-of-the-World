@@ -41,7 +41,11 @@ const Country = () => {
     <div className="country-page">
       <CountryInput findCountry={findCountry} countries={allCountries} />
       {selectedCountry !== undefined && <LocationLine subregion={subregion} />}
-      <PlacesList places={placesByCountry} subregion={subregion} />
+      <PlacesList
+        places={placesByCountry}
+        subregion={subregion}
+        resultsAmount={placesByCountry.length}
+      />
     </div>
   );
 };

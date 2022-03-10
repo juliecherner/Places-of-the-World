@@ -1,13 +1,13 @@
 import PlaceCard from "../place-card";
 import "./places-list.css";
 
-const PlacesList = ({ places }) => {
+const PlacesList = ({ places, resultsAmount }) => {
   return (
     <div>
-      {places.length === 1 ? (
-        <div className="places-list-results">{places.length} result</div>
+      {resultsAmount === 1 ? (
+        <div className="places-list-results">1 result</div>
       ) : (
-        <div className="places-list-results">{places.length} results</div>
+        <div className="places-list-results">{resultsAmount} results</div>
       )}
 
       {places.length > 0 ? (

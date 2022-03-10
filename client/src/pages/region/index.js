@@ -69,7 +69,11 @@ const Region = ({ all }) => {
         </Button>
       </div>
       {shownCountries && <CountriesByRegion countries={countries} />}
-      {places.length > 0 ? <PlacesList places={places} /> : <Spinner />}
+      {places.length > 0 ? (
+        <PlacesList places={places} resultsAmount={places.length} />
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };

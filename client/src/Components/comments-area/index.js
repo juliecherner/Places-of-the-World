@@ -24,10 +24,13 @@ const CommentsArea = ({ placeId }) => {
 
   return (
     <div className="place-page-comments-area">
-      <CommentsList comments={comments} />
-      <Button variant="contained" onClick={handleClick}>
-        Rate the place
-      </Button>
+      <div>
+        <CommentsList comments={comments} />
+        <Button variant="contained" onClick={handleClick}>
+          Rate the place
+        </Button>
+      </div>
+
       {addCommentMode && (
         <NewComment
           placeId={placeId}

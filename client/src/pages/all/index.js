@@ -1,15 +1,30 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RegionButtons from "../../Components/region-buttons";
 import PlacesList from "../../Components/places-list";
-
 import Spinner from "../../Components/spinner";
-
 import { Button } from "@mui/material";
 import "./all.css";
 
 const All = ({ all }) => {
   const [buttonsMode, setButtonsMode] = useState(false);
+  const [maxStates, setMaxStates] = useState(12);
+  const [states, setStates] = useState([]);
+  const html = document.querySelector("html");
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (html.scrollTop > html.scrollHeight - 2000) {
+        setMaxStates(maxStates + 12);
+      }
+    }, 1000);
+    return () => clearInterval(id);
+  });
+
+  useEffect(() => {
+    const newStates = all.filter((state, index) => index < maxStates);
+    setStates(newStates);
+  }, [all, maxStates]);
 
   const showButtons = () => {
     setButtonsMode(!buttonsMode);
@@ -28,7 +43,11 @@ const All = ({ all }) => {
       </div>
       <div>{buttonsMode && <RegionButtons />}</div>
 
-      {all.length < 1 ? <Spinner /> : <PlacesList places={all} />}
+      {states.length < 1 ? (
+        <Spinner />
+      ) : (
+        <PlacesList places={states} resultsAmount={all.length} />
+      )}
     </div>
   );
 };

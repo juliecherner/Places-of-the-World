@@ -1,4 +1,7 @@
 .place-page {
-  width: 70%;
+  width: 80%;
   margin: 8vh auto;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
 }

@@ -37,11 +37,13 @@ const Place = () => {
 
   return (
     <div className="place-page">
-      {place && location ? (
-        <PlaceFullInfo place={place} location={location} />
-      ) : (
-        <Spinner />
-      )}
+      <div>
+        {place && location ? (
+          <PlaceFullInfo place={place} location={location} />
+        ) : (
+          <Spinner />
+        )}
+      </div>
       <CommentsArea placeId={placeid} />
     </div>
   );
