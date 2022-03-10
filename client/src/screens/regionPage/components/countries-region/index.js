@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./countries-region.css";
 
 const CountriesByRegion = ({ countries }) => {

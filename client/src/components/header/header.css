@@ -1,0 +1,27 @@
+.header {
+  background-color: white;
+  font: 1.3rem bold;
+  z-index: 1;
+}
+
+.header-desktop {
+  padding: 0 10%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-item:hover {
+  color: green;
+  font-weight: 900;
+  transform: scale(1.05);
+}
+
+.header--mobile {
+  padding: 0 10%;
+  height: 7vh;
+  margin-top: 3vh;
+  display: none;
+}

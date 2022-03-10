@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./Components/header/index";
+import Header from "./components/header/index";
 import All from "./screens/mainPage";
 import Error from "./screens/errorBoundries";
 import Home from "./screens/homePage";
