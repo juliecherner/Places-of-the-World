@@ -1,11 +1,11 @@
-.all-page {
+.main-page {
   width: 80%;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
 }
 
-.all-page-header {
+.main-page-header {
   display: flex;
   flex-direction: row;
   gap: 3vh;

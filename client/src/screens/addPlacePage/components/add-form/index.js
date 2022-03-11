@@ -5,6 +5,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { constants } from "./constants/constants";
 
 import "./add-form.css";
 
@@ -32,10 +33,8 @@ const reducer = (state, action) => {
       return state;
   }
 };
-//code repeats :(
 const AddForm = () => {
   const [allCountries, setAllCountries] = useState([]);
-
   const [inputFields, dispatcher] = useReducer(reducer, initialState);
 
   const getAll = async () => {
@@ -54,13 +53,6 @@ const AddForm = () => {
 
     dispatcher(action);
   };
-
-  const constants = [
-    { placeholder: "Enter place name", name: "place" },
-    { placeholder: "Enter place description", name: "description" },
-    { placeholder: "Enter link to valid image", name: "imgURL" },
-    { placeholder: "Enter location in country", name: "subLocation" },
-  ];
 
   const addPlace = async (inputFields) => {
     try {

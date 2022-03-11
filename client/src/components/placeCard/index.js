@@ -1,5 +1,6 @@
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import "./place-card.css";
 
 const PlaceCard = ({ place }) => {
   return (

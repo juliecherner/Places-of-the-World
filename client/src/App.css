@@ -51,4 +51,7 @@ span {
   .home-page--button {
     margin-top: 15vh;
   }
+  .country-page-country-input {
+    width: 100%;
+  }
 }

@@ -4,9 +4,9 @@ import RegionButtons from "../regionPage/components/region-buttons";
 import PlacesList from "../../components/placesList";
 import Spinner from "../../components/spinner";
 import { Button } from "@mui/material";
-import "./all.css";
+import "./main-page.css";
 
-const All = ({ all }) => {
+const MainPage = ({ all }) => {
   const [buttonsMode, setButtonsMode] = useState(false);
   const [maxStates, setMaxStates] = useState(12);
   const [states, setStates] = useState([]);
@@ -31,8 +31,8 @@ const All = ({ all }) => {
   };
 
   return (
-    <div className="all-page">
-      <div className="all-page-header">
+    <div className="main-page">
+      <div className="main-page-header">
         <Button variant="contained" color="info" onClick={showButtons}>
           Find by region
         </Button>
@@ -52,4 +52,4 @@ const All = ({ all }) => {
   );
 };
 
-export default All;
+export default MainPage;
