@@ -10,7 +10,7 @@ const insertCountries = async () => {
   }
 };
 
-const countriesByRegion = async (region) => {
+const allInRegion = async (region) => {
   const countries = await Country.find({ region: region }).exec();
   if (countries.length < 1) {
     throw new Error(`There are no countries in region ${region}`);
@@ -34,4 +34,4 @@ const byName = async (country) => {
   return countries;
 };
 
-module.exports = { insertCountries, countriesByRegion, all, byName };
+module.exports = { insertCountries, allInRegion, all, byName };
