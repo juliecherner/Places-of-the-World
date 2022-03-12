@@ -22,8 +22,10 @@ const Country = () => {
   const findCountry = async (input) => {
     setSelectedCountry(input);
     if (input !== undefined) {
-      const countries = await Api.get(`api/places/all/?country=${input}`);
-      const subregion = await Api.get(`api/country/country?country=${input}`);
+      const countries = await Api.get(
+        `api/places/by-country/?country=${input}`
+      );
+      const subregion = await Api.get(`api/country/by-name?country=${input}`);
       setPlacesByCountry(countries.data);
       setSubregions(subregion.data);
     }

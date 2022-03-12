@@ -11,15 +11,14 @@ const commentRouter = require("./routes/comment.routes.js");
 
 const app = express();
 
-const publicPath = path.join(__dirname, "../client/build"); ///????
+const publicPath = path.join(__dirname, "../client/build");
 app.use(cors());
-app.use(express.json({ limit: "300mb" }));
-app.use(express.static(publicPath)); ///???
+app.use(express.json({}));
+app.use(express.static(publicPath));
 
-/*app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
-});
-*/
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "build", "index.html"));
+// });
 
 try {
   mongoose.connect(process.env.MONGODB_URL);

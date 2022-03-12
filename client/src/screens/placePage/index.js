@@ -8,38 +8,26 @@ import "./place.css";
 
 const Place = () => {
   const { placeid } = useParams();
-  const [place, setPlace] = useState([]);
-  const [location, setLocation] = useState([]);
+  const [place, setPlace] = useState({});
 
   const getPlaceInfo = async () => {
-    const { data } = await Api.get(`api/places/${placeid}`);
-    const place = data[0];
-    setPlace(place);
-    return place;
-  };
-
-  const getLocation = async () => {
-    const country = await getPlaceInfo();
-    const { data } = await Api.get(
-      `api/country/country?country=${country.country}`
-    );
-    const location = data[0];
-    setLocation(location);
+    try {
+      const { data } = await Api.get(`api/places/by-id/${placeid}`);
+      setPlace(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getPlaceInfo();
   }, []);
 
-  useEffect(() => {
-    getLocation();
-  }, []);
-
   return (
     <div className="place-page">
       <div>
-        {place && location ? (
-          <PlaceFullInfo place={place} location={location} />
+        {Object.keys(place).length > 0 ? (
+          <PlaceFullInfo place={place} />
         ) : (
           <Spinner />
         )}

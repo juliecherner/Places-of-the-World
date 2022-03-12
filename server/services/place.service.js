@@ -3,7 +3,6 @@ const Place = require("../models/place.model");
 const scraper = require("./scraper.service.js");
 const countryService = require("./country.service.js");
 const { getCountriesArray } = require("./utils");
-console.log(getCountriesArray);
 
 const all = async () => {
   try {
@@ -29,8 +28,10 @@ const allInRegion = async (region) => {
 
 const oneById = async (id) => {
   try {
-    const place = await Place.find({ _id: id }).exec();
-    return place;
+    const place = await Place.findOne({ _id: id }).exec();
+    const countryName = place.country;
+    const [placeLocation] = await countryService.byName(countryName);
+    return { place, placeLocation };
   } catch {
     throw new Error(`Couldn't get a place with id ${id}`);
   }

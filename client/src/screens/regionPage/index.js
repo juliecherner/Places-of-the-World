@@ -7,7 +7,7 @@ import Spinner from "../../components/spinner";
 import { Button } from "@mui/material";
 import "./region.css";
 
-const Region = ({ all }) => {
+const Region = () => {
   const { region } = useParams();
   const [countries, setCountries] = useState([]);
   const [shownCountries, setShownCountries] = useState(false);
@@ -22,7 +22,7 @@ const Region = ({ all }) => {
     }
   };
 
-  const getAllPlacesInRegion = async () => {
+  const getAllPlacesInRegion = async (region) => {
     try {
       const { data } = await Api.get(`api/places/by-region?region=${region}`);
       setPlaces(data);
@@ -36,7 +36,7 @@ const Region = ({ all }) => {
   });
 
   useEffect(() => {
-    getAllPlacesInRegion();
+    getAllPlacesInRegion(region);
   });
 
   const changeShowMode = () => {

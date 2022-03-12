@@ -29,7 +29,7 @@ const findOne = async (req, res) => {
   }
 };
 
-const findOneByCountry = async (req, res) => {
+const findAllByCountry = async (req, res) => {
   const { country } = req.query;
   try {
     const placesList = await placeService.allOfCountry(country);
@@ -53,6 +53,6 @@ module.exports = {
   findAll,
   findAllInRegion,
   findOne,
-  findOneByCountry,
+  findAllByCountry,
   addOne,
 };
