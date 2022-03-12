@@ -2,8 +2,18 @@ const placeService = require("../services/place.service.js");
 
 const findAll = async (req, res) => {
   try {
-    const countriesList = await placeService.all();
-    res.status(200).send(countriesList);
+    const placesList = await placeService.all();
+    res.status(200).send(placesList);
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+};
+
+const findAllInRegion = async (req, res) => {
+  const { region } = req.query;
+  try {
+    const placesList = await placeService.allInRegion(region);
+    res.status(200).send(placesList);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
@@ -12,8 +22,8 @@ const findAll = async (req, res) => {
 const findOne = async (req, res) => {
   const { id } = req.params;
   try {
-    const countriesList = await placeService.oneById(id);
-    res.status(200).send(countriesList);
+    const place = await placeService.oneById(id);
+    res.status(200).send(place);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
@@ -39,4 +49,10 @@ const addOne = async (req, res) => {
   }
 };
 
-module.exports = { findAll, findOne, findOneByCountry, addOne };
+module.exports = {
+  findAll,
+  findAllInRegion,
+  findOne,
+  findOneByCountry,
+  addOne,
+};

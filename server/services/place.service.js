@@ -1,10 +1,26 @@
 const mongoose = require("mongoose");
 const Place = require("../models/place.model");
 const scraper = require("./scraper.service.js");
+const countryService = require("./country.service.js");
+const { getCountriesArray } = require("./utils");
+console.log(getCountriesArray);
 
 const all = async () => {
   try {
     const places = await Place.find().exec();
+    return places;
+  } catch {
+    throw new Error("Couldn't get all users from mongo");
+  }
+};
+
+const allInRegion = async (region) => {
+  const countriesInRegion = await countryService.allInRegion(region);
+  const countriesArray = getCountriesArray(countriesInRegion);
+  try {
+    const places = await Place.find({
+      country: { $in: countriesArray },
+    }).exec();
     return places;
   } catch {
     throw new Error("Couldn't get all users from mongo");
@@ -47,4 +63,11 @@ const insertPlaces = async () => {
   }
 };
 
-module.exports = { all, oneById, allOfCountry, insertPlaces, newPlace };
+module.exports = {
+  all,
+  allInRegion,
+  oneById,
+  allOfCountry,
+  insertPlaces,
+  newPlace,
+};

@@ -14,48 +14,30 @@ const Region = ({ all }) => {
   const [places, setPlaces] = useState([]);
 
   const allCountriesByRegion = async () => {
-    const { data } = await Api.get(`api/country/region/?region=${region}`);
-    setCountries(data);
-    return data;
+    try {
+      const { data } = await Api.get(`api/country/region/?region=${region}`);
+      setCountries(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // const allPlacesByCountries = async () => {
-  //   const countriesRegion = await allCountriesByRegion();
-  //   if (countriesRegion.length > 0) {
-  //     let promises = [];
-  //     for (let i = 0; i < countriesRegion.length; i++) {
-  //       const result = await Api.get(
-  //         `api/places/all/?country=${countriesRegion[i].country}`
-  //       );
-  //       promises.push(result);
-  //     }
-
-  //     let results = await Promise.all(promises);
-  //     const places = results.map((place) => place.data);
-  //     setPlaces(places.flat());
-  //   }
-  // };
-
-  const getRegionCountries = async () => {
-    const countriesRegion = await allCountriesByRegion();
-    let resultCountries = [];
-    for (let i = 0; i < all.length; i++) {
-      for (let j = 0; j < countriesRegion.length; j++) {
-        if (all[i].country === countriesRegion[j].country) {
-          resultCountries.push(all[i]);
-        }
-      }
+  const getAllPlacesInRegion = async () => {
+    try {
+      const { data } = await Api.get(`api/places/by-region?region=${region}`);
+      setPlaces(data);
+    } catch (error) {
+      console.log(error);
     }
-    setPlaces(resultCountries);
   };
 
   useEffect(() => {
     allCountriesByRegion();
-  }, []);
+  });
 
   useEffect(() => {
-    getRegionCountries();
-  }, []);
+    getAllPlacesInRegion();
+  });
 
   const changeShowMode = () => {
     setShownCountries(!shownCountries);
