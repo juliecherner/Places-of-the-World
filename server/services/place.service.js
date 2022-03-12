@@ -20,20 +20,18 @@ const oneById = async (id) => {
   }
 };
 
-const onesByCountry = async (country) => {
+const allOfCountry = async (country) => {
   try {
-    const place = await Place.find({ country: country }).exec();
-    return place;
+    const places = await Place.find({ country: country }).exec();
+    return places;
   } catch {
-    throw new Error(`Couldn't get a place in country ${id}`);
+    throw new Error(`Couldn't find any places in country ${country}`);
   }
 };
 
 const newPlace = async (place) => {
   place.alt = place.place;
-
   const placeNew = await Place.create(place);
-
   if (!placeNew) {
     throw new Error(`New place is not created`);
   }
@@ -42,7 +40,6 @@ const newPlace = async (place) => {
 
 const insertPlaces = async () => {
   const places = await scraper();
-  console.log(places.length);
   try {
     Place.insertMany(places);
   } catch (error) {
@@ -50,4 +47,4 @@ const insertPlaces = async () => {
   }
 };
 
-module.exports = { all, oneById, onesByCountry, insertPlaces, newPlace };
+module.exports = { all, oneById, allOfCountry, insertPlaces, newPlace };

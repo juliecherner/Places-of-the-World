@@ -22,8 +22,8 @@ const findOne = async (req, res) => {
 const findOneByCountry = async (req, res) => {
   const { country } = req.query;
   try {
-    const countriesList = await placeService.onesByCountry(country);
-    res.status(200).send(countriesList);
+    const placesList = await placeService.allOfCountry(country);
+    res.status(200).send(placesList);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
