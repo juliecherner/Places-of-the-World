@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/header/index";
 import MainPage from "./screens/mainPage";
@@ -7,7 +7,6 @@ import Home from "./screens/homePage";
 import Region from "./screens/regionPage";
 import Country from "./screens/byCountrySearchPage";
 import NewPlace from "./screens/addPlacePage";
-import Spinner from "./components/spinner";
 import Place from "./screens/placePage";
 import Api from "./api/Api";
 import "./App.css";

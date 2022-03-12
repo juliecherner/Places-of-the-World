@@ -1,6 +1,6 @@
 const Comment = require("../models/comment.model");
 
-const byParameter = async (placeId) => {
+const allByPlace = async (placeId) => {
   const comments = await Comment.find({ placeId: placeId }).exec();
   if (comments.length < 1) {
     throw new Error(`There are no comments to place with id ${placeId}`);
@@ -16,4 +16,4 @@ const add = async (newComment) => {
   return comment;
 };
 
-module.exports = { byParameter, add };
+module.exports = { allByPlace, add };

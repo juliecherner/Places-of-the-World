@@ -1,10 +1,10 @@
 const commentService = require("../services/comment.service.js");
 
-const findByPlace = async (req, res) => {
+const findAllByPlace = async (req, res) => {
   const { placeId } = req.query;
   //add check
   try {
-    const comments = await commentService.byParameter(placeId);
+    const comments = await commentService.allByPlace(placeId);
     res.status(200).send(comments);
   } catch (error) {
     res.status(204).send({ error: error.message });
@@ -21,4 +21,4 @@ const addOne = async (req, res) => {
   }
 };
 
-module.exports = { findByPlace, addOne };
+module.exports = { findAllByPlace, addOne };
