@@ -7,14 +7,22 @@ import Button from "@mui/material/Button";
 import "./login-page.css";
 
 const LoginPage = () => {
-  const { actionType } = useContext(UserContext);
+  const { actionType, userLogin, userRegister } = useContext(UserContext);
+
+  const handleSubmit = () => {
+    actionType === "Login"
+      ? console.log("login", userLogin)
+      : console.log("register", userRegister);
+  };
+
   return (
     <div className="login-page">
       <FormTogglers />
       <div className="login-page-form-title">{actionType} form</div>
       {actionType === "Login" ? <LoginForm /> : <RegisterForm />}
+
       <div className="login-page-form--submit">
-        <Button variant="contained" color="success">
+        <Button variant="contained" color="success" onClick={handleSubmit}>
           {actionType}
         </Button>
       </div>
