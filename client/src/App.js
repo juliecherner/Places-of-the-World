@@ -8,6 +8,7 @@ import Region from "./screens/regionPage";
 import Country from "./screens/byCountrySearchPage";
 import NewPlace from "./screens/addPlacePage";
 import Place from "./screens/placePage";
+import LoginPage from "./screens/loginPage";
 import Api from "./api/Api";
 import "./App.css";
 import "./normalize.css";
@@ -36,6 +37,7 @@ function App() {
             element={<Region all={allPlaces} />}
           />
           <Route path="/new-place" element={<NewPlace />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/country" element={<Country />} />
           <Route path="/places/:placeid" element={<Place />} />
           <Route path="*" element={<Error />} />

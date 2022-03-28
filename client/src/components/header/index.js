@@ -21,6 +21,9 @@ const Header = () => {
           <Link to="/country" className="header-item">
             Find by country
           </Link>
+          <Link to="/login" className="header-item">
+            Log in
+          </Link>
         </div>
 
         <nav className="header--mobile">

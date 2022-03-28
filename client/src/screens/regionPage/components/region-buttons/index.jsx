@@ -19,7 +19,6 @@ const RegionButtons = () => {
             key={region}
             name={region}
             onClick={() => console.log(region)}
-            name={region}
           />
         </Link>
       ))}

@@ -1,0 +1,34 @@
+.login-page {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-page--togglers {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.login-page-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  gap: 1vh;
+}
+
+.login-page-form-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2vh;
+}
+
+.login-page-form--submit {
+  margin-top: 2vh;
+}
