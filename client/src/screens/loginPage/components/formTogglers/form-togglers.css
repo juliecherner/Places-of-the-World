@@ -1,0 +1,12 @@
+.login-page--togglers {
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  font-size: 1.5rem;
+}
+
+.login-page--toggler-active {
+  color: green;
+}

@@ -6,14 +6,6 @@
   align-items: center;
 }
 
-.login-page--togglers {
-  margin-top: 10vh;
-  margin-bottom: 5vh;
-  display: flex;
-  flex-direction: row;
-  gap: 5vw;
-}
-
 .login-page-form {
   display: flex;
   flex-direction: column;
