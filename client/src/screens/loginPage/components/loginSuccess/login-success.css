@@ -1,0 +1,14 @@
+.login-page-login-success {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15vh;
+  font: 3rem bold;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.login-page-login-success-green {
+  color: green;
+}

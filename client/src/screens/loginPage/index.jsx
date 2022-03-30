@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user.context";
 import FormTogglers from "./components/formTogglers";
 import RegisterForm from "./components/registerForm";
 import LoginForm from "./components/loginForm";
+import Api from "../../api/Api";
 import Button from "@mui/material/Button";
 import "./login-page.css";
 
@@ -13,11 +15,29 @@ import "./login-page.css";
 
 const LoginPage = () => {
   const { actionType, userLogin, userRegister } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    actionType === "Login"
-      ? console.log("login", userLogin)
-      : console.log("register", userRegister);
+  const handleSubmit = async () => {
+    if (actionType === "Login") {
+      console.log("login user", userLogin);
+    }
+    if (actionType === "Register" && userToCreate(userRegister)) {
+      const updatedUser = userToCreate(userRegister);
+      try {
+        const addedUser = await Api.post("api/user/signup", updatedUser);
+        if (addedUser) {
+          navigate("/result");
+          //works but refactor!!!
+          // delete userRegister.name;
+          // delete userRegister.wishes;
+          // delete userRegister.email;
+          // delete userRegister.password;
+          // delete userRegister.passwordRepeat;
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
   };
 
   return (
@@ -35,3 +55,16 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+const userToCreate = (user) => {
+  const updatedUser = {
+    name: user.name,
+    email: user.email,
+    password: user.password,
+    wishes: [],
+  };
+
+  if (user.password === user.passwordRepeat) {
+    return updatedUser;
+  }
+};
