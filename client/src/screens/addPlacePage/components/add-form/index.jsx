@@ -107,7 +107,7 @@ const AddForm = () => {
         variant="contained"
         color="success"
         onClick={() => {
-          if (checkIfNotEmpty(inputFields)) {
+          if (checkIfValuesNotEmpty(inputFields)) {
             dispatcher({ name: "imgURL", payload: "" });
             dispatcher({ name: "country", payload: "" });
             dispatcher({ name: "subLocation", payload: "" });
@@ -123,7 +123,7 @@ const AddForm = () => {
   );
 };
 
-const checkIfNotEmpty = (state) => {
+const checkIfValuesNotEmpty = (state) => {
   const objectValues = Object.values(state);
   return objectValues.some((item) => item !== "");
 };

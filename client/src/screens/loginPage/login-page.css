@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20%;
-  gap: 1vh;
+  width: 30%;
+  gap: 2.5vh;
 }
 
 .login-page-form-title {

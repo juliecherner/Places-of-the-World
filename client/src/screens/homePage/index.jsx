@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
-
 import "./home.css";
 
 const Home = () => {
