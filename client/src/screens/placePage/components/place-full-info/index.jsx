@@ -1,3 +1,4 @@
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import "./place-full-info.css";
 
 const PlaceFullInfo = ({ place }) => {
@@ -6,6 +7,7 @@ const PlaceFullInfo = ({ place }) => {
       <div className="place-full-info-text-area">
         <div className="place-full-info-text-area-title">
           {place.place.place}
+          <FavoriteBorderOutlinedIcon color="info" />
         </div>
         <div className="place-full-info-locations">
           <div>Location: {place.place.subLocation}</div>
