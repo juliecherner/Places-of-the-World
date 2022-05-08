@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const mongoose = require("mongoose");
+const connectToMongo = require("./database/db.connection");
 const placeRouter = require("./routes/place.routes.js");
 const adminRouter = require("./routes/admin.routes.js");
 const countryRouter = require("./routes/country.routes.js");
@@ -16,16 +16,7 @@ app.use(cors());
 app.use(express.json({}));
 app.use(express.static(publicPath));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "build", "index.html"));
-// });
-
-try {
-  mongoose.connect(process.env.MONGODB_URL);
-  console.log("project places");
-} catch {
-  throw new Error("Couldn't connect to Mongo'");
-}
+connectToMongo();
 
 app.use("/api/places", placeRouter);
 app.use("/api/admin", adminRouter);

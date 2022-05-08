@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --all",
     "start": "node ./server/app.js",
     "start-server-dev": "nodemon ./server/app.js",
     "start-react-dev": "npm run start ./client",
@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@shelf/jest-mongodb": "^2.2.2",
     "axios": "^0.25.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

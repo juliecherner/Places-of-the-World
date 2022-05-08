@@ -1,5 +1,3 @@
-const config = {
-  verbose: true,
+module.exports = {
+  watchPathIgnorePatterns: ["globalConfig"],
 };
-
-module.exports = config;

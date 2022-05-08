@@ -1,5 +1,6 @@
 import { useState, useEffect, useReducer } from "react";
 import Api from "../../../../api/Api";
+import { isObjectNotEmpty } from "../../../../utils/form.utils";
 import { Input, Button } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -107,7 +108,7 @@ const AddForm = () => {
         variant="contained"
         color="success"
         onClick={() => {
-          if (checkIfValuesNotEmpty(inputFields)) {
+          if (isObjectNotEmpty(inputFields)) {
             dispatcher({ name: "imgURL", payload: "" });
             dispatcher({ name: "country", payload: "" });
             dispatcher({ name: "subLocation", payload: "" });
@@ -121,11 +122,6 @@ const AddForm = () => {
       </Button>
     </div>
   );
-};
-
-const checkIfValuesNotEmpty = (state) => {
-  const objectValues = Object.values(state);
-  return objectValues.some((item) => item !== "");
 };
 
 export default AddForm;

@@ -32,7 +32,8 @@ async function cleanedCountries() {
 function handleApiMistakes(country, region, subRegion) {
   if (subRegion === undefined) {
     return { country: country, region: region, subregion: "Antarctic" };
-  } else if (region === "Americas") {
+  }
+  if (region === "Americas") {
     return { country: country, region: "America", subregion: subRegion };
   }
 }
@@ -43,4 +44,4 @@ async function getCountriesNames() {
   return newCountries;
 }
 
-module.exports = { cleanedCountries, getCountriesNames };
+module.exports = { cleanedCountries, getCountriesNames, handleApiMistakes };

@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer-extra");
 const AdblockerPlugin = require("puppeteer-extra-plugin-adblocker");
 puppeteer.use(AdblockerPlugin());
 
-const { getCountriesNames } = require("./api.service.js")
+const { getCountriesNames } = require("./api.service.js");
 const { states, statesUK } = require("../constants/constants");
 
 const url2018 = "https://time.com/collection/worlds-greatest-places-2018/";
@@ -233,4 +233,4 @@ async function scrollToBottom(page) {
   }
 }
 
-module.exports = scraper;
+module.exports = { scraper, checkLocation, clarifyLocation };
