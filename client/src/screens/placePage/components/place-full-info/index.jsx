@@ -7,7 +7,9 @@ const PlaceFullInfo = ({ place }) => {
       <div className="place-full-info-text-area">
         <div className="place-full-info-text-area-title">
           {place.place.place}
-          <FavoriteBorderOutlinedIcon color="info" />
+          <div onClick={console.log("not!")}>
+            <FavoriteBorderOutlinedIcon color="info" />
+          </div>
         </div>
         <div className="place-full-info-locations">
           <div>Location: {place.place.subLocation}</div>
