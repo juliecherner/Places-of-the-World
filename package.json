@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --all",
+    "test": "jest --all",
     "start": "node ./server/app.js",
     "start-server-dev": "nodemon ./server/app.js",
     "start-react-dev": "npm run start ./client",
